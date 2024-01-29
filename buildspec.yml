@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Node.js version 18.17.0
+      - echo Installing Node.js version 18.17.0 for AMD64
       - curl -o- https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz | tar xJ
       - export PATH=$PWD/node-v18.17.0-linux-x64/bin:$PATH
       - node --version
