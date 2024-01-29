@@ -1,8 +1,8 @@
-name: {{이름}}
+name: CI/CD
 
 on:
   push:
-    branches: {{branch 이름}}
+    branches: main
 jobs:
   build:
     runs-on: ubuntu-latest
