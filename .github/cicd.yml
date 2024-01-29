@@ -36,4 +36,4 @@ jobs:
           aws s3 cp --recursive --region ap-northeast-2 ./build s3://sable-frontend-bucket
 
       - name: Clear Cache to Cloudfront
-        run: aws cloudfront create-invalidation --distribution-id {{CloudFront ID}} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id EBF1YK2IR99BI --paths "/*"
