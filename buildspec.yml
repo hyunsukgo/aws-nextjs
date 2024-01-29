@@ -3,21 +3,19 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Node.js version 18.17.0 for AMD64
-      - curl -o- https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz | tar xJ
-      - export PATH=$PWD/node-v18.17.0-linux-x64/bin:$PATH
-      - node --version
+      - npm i npm@latest -g
+      - node -v
       - pip install --upgrade pip
       - pip install --upgrade awscli
-  pre_build:
-    commands:
-      - echo Pre_build Phase
-      - npm install --legacy-peer-deps
-  build:
-    commands:
-      - echo Build Phase
-      - npm run build
-  post_build:
-    commands:
-      - echo PostBuild Phase
-      - aws s3 sync build/ s3://sable-frontend-bucket
+    pre_build:
+      commands:
+        - echo Pre_build Phase
+        - npm install --legacy-peer-deps
+    build:
+      commands:
+        - echo Build Phase
+        - npm run build
+    post_build:
+      commands:
+        - echo PostBuild Phase
+        - aws s3 sync ./build s3://sable-frontend-bucket
