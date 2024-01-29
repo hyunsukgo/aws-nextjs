@@ -3,6 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
+      - nvm install 18.17
       - node -v
       - pip install --upgrade pip
       - pip install --upgrade awscli
