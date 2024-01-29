@@ -13,7 +13,7 @@ phases:
 artifacts:
   files:
     - "**/*"
-  name: "web-dist-prod"
+  name: "nextjs-build"
   base-directory: build
 
 cache:
