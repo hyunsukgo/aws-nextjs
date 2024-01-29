@@ -6,7 +6,7 @@ phases:
       - echo Installing Node.js version 18.17.0
       - curl -o- https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz | tar xJ
       - export PATH=$PWD/node-v18.17.0-linux-x64/bin:$PATH
-      - node -v
+      - node --version
       - pip install --upgrade pip
       - pip install --upgrade awscli
   pre_build:
