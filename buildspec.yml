@@ -19,3 +19,8 @@ phases:
     commands:
       - echo PostBuild Phase
       - aws s3 sync ./build s3://sable-frontend-bucket
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
