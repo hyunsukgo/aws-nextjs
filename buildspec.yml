@@ -13,8 +13,8 @@ phases:
   build:
     commands:
       - echo Build Phase
-      - echo "Modifying next.config.js for export..."
-      - sed -i 's/\/\* Your existing module.exports \*\//module.exports = { output: "export", \/\/ Rest of your config... /' next.config.js
+      - echo "Modifying next.config.mjs for export..."
+      - sed -i 's/\/\* Your existing module.exports \*\//module.exports = { output: "export", \/\/ Rest of your config... /' next.config.mjs
       - npm run build
   post_build:
     commands:
