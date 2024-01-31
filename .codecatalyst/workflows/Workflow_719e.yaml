@@ -53,6 +53,8 @@ Actions:
       # Optional
       Sources:
         - WorkflowSource # This specifies that the action requires this Workflow as a source
+      Artifacts:
+        - newOutput
     Compute:
       Type: EC2
     Configuration:
