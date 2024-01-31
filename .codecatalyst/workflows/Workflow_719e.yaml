@@ -26,7 +26,7 @@ Actions:
       Artifacts:
         - Name: newOutput
           Files:
-            - /server/app/*
+            - ./server/app/*
     # Defines the action's properties.
     Configuration:
       # Required - Steps are sequential instructions that run shell commands
