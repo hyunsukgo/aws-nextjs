@@ -20,13 +20,13 @@ Actions:
     Outputs:
       # Optional; Automatically discover reports for popular test frameworks
       AutoDiscoverReports:
-        Enabled: true
+        Enabled: false
         # Use as prefix for the report files
         ReportNamePrefix: rpt
       Artifacts:
         - Name: newOutput
           Files:
-            - "*/**"
+            - /server/app/*
     # Defines the action's properties.
     Configuration:
       # Required - Steps are sequential instructions that run shell commands
@@ -39,3 +39,28 @@ Actions:
         Image: node
     Compute:
       Type: EC2
+  DeployToAmazonCloudFrontAndAmazonS3_7d:
+    # Identifies the action. Do not modify this value.
+    Identifier: codecatalyst-labs/deploy-to-cloudfront-s3@v1.0.1
+    # Required; You can use an environment, AWS account connection, and role to access AWS resources.
+    Environment:
+      Connections:
+        - Role: CodeCatalystWorkflowDevelopmentRole-comento
+          Name: "904523009150"
+      Name: PRD
+    # Specifies the source and/or artifacts to pass to the action as input.
+    Inputs:
+      # Optional
+      Sources:
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
+    Compute:
+      Type: EC2
+    Configuration:
+      StackName: aws-nextjs
+      Wait: true
+      AWSRegion: ap-northeast-2
+      ExistingBucket: false
+      BucketName: comento-nextjs
+      Path: .
+    DependsOn:
+      - Build_ab
