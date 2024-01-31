@@ -34,6 +34,5 @@ Actions:
         - Run: npm install
         - Run: npm install --legacy-peer-deps
         - Run: npm run build
-        - Run: aws s3 sync ./build s3://sable-frontend-bucket
     Compute:
       Type: EC2
