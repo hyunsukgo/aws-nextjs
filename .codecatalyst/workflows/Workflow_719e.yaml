@@ -34,5 +34,8 @@ Actions:
         - Run: npm install
         - Run: npm install --legacy-peer-deps
         - Run: npm run build
+      Container:
+        Registry: DockerHub
+        Image: node
     Compute:
       Type: EC2
