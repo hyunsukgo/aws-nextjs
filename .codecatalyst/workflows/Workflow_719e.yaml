@@ -61,3 +61,5 @@ Actions:
       ExistingBucket: false
       BucketName: comento-nextjs
       Path: .
+    DependsOn:
+      - Build_ab
